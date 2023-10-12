@@ -18,9 +18,6 @@
         <div id="message">
             I miss you
         </div>
-        <div id="message3">
-            But I don't trust you anymore
-        </div>
     </div>
     <div id="love" class="hidden">
         HAPPY BIRTHDAY! <br>
@@ -32,27 +29,29 @@ I'll love you for a thousand more
     <button id="showLoveButton">Click here for a surprise</button>
     <audio id="loveSong" src="audio.mp3.mp3"></audio>
 
+
     <script>
-const loveMessage = document.getElementById('love');
-const showLoveButton = document.getElementById('showLoveButton');
-const loveSong = document.getElementById('loveSong');
+        const showLoveButton = document.getElementById('showLoveButton');
+        const loveMessage = document.getElementById('love');
+        const loveSong = document.getElementById('loveSong');
 
-showLoveButton.addEventListener('click', function() {
-    loveMessage.style.display = 'block';
-    setTimeout(() => {
-        loveMessage.classList.remove('hidden');
-    }, 100);
+        showLoveButton.addEventListener('click', function() {
+            // Change the background image
+            document.body.style.backgroundImage = 'url("pic2.jpg")';
 
-    // Attempt to play the audio
-    try {
-        loveSong.play();
-    } catch (error) {
-        console.error("Error playing audio:", error);
-    }
-});
+            // Show the love message
+            loveMessage.style.display = 'block';
+            setTimeout(() => {
+                loveMessage.classList.remove('hidden');
+            }, 100);
 
-
+            // Attempt to play the audio
+            try {
+                loveSong.play();
+            } catch (error) {
+                console.error("Error playing audio:", error);
+            }
+        });
     </script>
-
 </body>
 </html>
